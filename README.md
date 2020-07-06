@@ -9,24 +9,9 @@ Compile
   * Copy the installed zlib folder to C:\Program Files (x86) so that OpenEXR finds zlib automatically
 1. Download and compile [openexr](https://github.com/AcademySoftwareFoundation/openexr)
   * Uncheck BUILD_SHARED
+1. Edit paths at the top of ``compile.m`` and run within MATLAB
 
 
-
-Compile from within MATLAB (syntax depends on platform):
-```
-mex exrread.cpp  -lIlmImf-2_5 -lIlmImfUtil-2_5 -lHalf-2_5 -lIex-2_5 -lIexMath-2_5 -lIlmThread-2_5 -lImath-2_5 -lzlibstatic -IC:\Users\kimo\Develop\ThirdParty\openexrstatic\include\OpenEXR -LC:\Users\kimo\Develop\ThirdParty\openexrstatic\lib -LC:\Users\kimo\Develop\Examples\OpenEXR\openexr-2.5.2\zlib\lib 
-```
-
-
-mex exrwrite.cpp -lIlmImf -IC:\Users\kimo\Develop\ThirdParty\openexr\include\OpenEXR -LC:\Users\kimo\Develop\ThirdParty\openexr\lib
-mex exrinfo.cpp  -lIlmImf -IC:\Users\kimo\Develop\ThirdParty\openexr\include\OpenEXR -LC:\Users\kimo\Develop\ThirdParty\openexr\lib
- 
-
-If OpenEXR is installed in another location (such as /sw), try these commands:
-
-mex exrread.cpp  -lIlmImf -lIex -lImath -lHalf -I/sw/include/OpenEXR -L/sw/lib
-mex exrwrite.cpp -lIlmImf -lIex -lImath -lHalf -I/sw/include/OpenEXR -L/sw/lib
-mex exrinfo.cpp  -lIlmImf -lIex -lImath -lHalf -I/sw/include/OpenEXR -L/sw/lib
 
 
 Usage

@@ -1,16 +1,21 @@
 # matlabexr
 
-Install
+Compile
 -------
-Install ilmbase and openexr to default location /usr/local
+1. Download and compile [zlib](https://zlib.net/)
+  * Use CMake and be sure to build a static library
+  * Set the CMAKE_INSTALL_PREFIX to some folder that you have permissions to write to
+  * Compile then build the INSTALL project
+  * Copy the installed zlib folder to C:\Program Files (x86) so that OpenEXR finds zlib automatically
+1. Download and compile [openexr](https://github.com/AcademySoftwareFoundation/openexr)
+  * Uncheck BUILD_SHARED
 
-Compile from within MATLAB:
 
-mex exrread.cpp  -lIlmImf -I/usr/local/include/OpenEXR -L/usr/local/lib
-mex exrwrite.cpp -lIlmImf -I/usr/local/include/OpenEXR -L/usr/local/lib
-mex exrinfo.cpp  -lIlmImf -I/usr/local/include/OpenEXR -L/usr/local/lib
 
+Compile from within MATLAB (syntax depends on platform):
+```
 mex exrread.cpp  -lIlmImf-2_5 -lIlmImfUtil-2_5 -lHalf-2_5 -lIex-2_5 -lIexMath-2_5 -lIlmThread-2_5 -lImath-2_5 -lzlibstatic -IC:\Users\kimo\Develop\ThirdParty\openexrstatic\include\OpenEXR -LC:\Users\kimo\Develop\ThirdParty\openexrstatic\lib -LC:\Users\kimo\Develop\Examples\OpenEXR\openexr-2.5.2\zlib\lib 
+```
 
 
 mex exrwrite.cpp -lIlmImf -IC:\Users\kimo\Develop\ThirdParty\openexr\include\OpenEXR -LC:\Users\kimo\Develop\ThirdParty\openexr\lib
@@ -28,20 +33,28 @@ Usage
 -----
 
 Read image
-    im = exrread(filename);
+```
+im = exrread(filename);
+```
 
 
 Read image and alpha channel
-    [im,mask] = exrread(filename);
+```
+[im,mask] = exrread(filename);
+```
 
 Image can be 1 or 3 channels of floating-point data
 Mask will be 1.0 if there is no alpha channel in the file
 
 Write image
-    exrwrite(im,filename)
+```
+exrwrite(im,filename)
+```
 
 Write image with mask in alpha channel
-    exrwrite(im,mask,filename)
+```
+exrwrite(im,mask,filename)
+```
 
 Image can be 1 or 3 channels
 Mask must be 1 channel the same size as the image

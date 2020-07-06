@@ -3,12 +3,12 @@
 Compile
 -------
 1. Download and compile [zlib](https://zlib.net/)
-  1. Use CMake and be sure to build a static library
-  1. Set the CMAKE_INSTALL_PREFIX to some folder that you have permissions to write to
-  1. Compile then build the INSTALL project
-  1. Copy the installed zlib folder to C:\Program Files (x86) so that OpenEXR finds zlib automatically
+   1. Use CMake and be sure to build a static library
+   1. Set the CMAKE_INSTALL_PREFIX to some folder that you have permissions to write to
+   1. Compile then build the INSTALL project
+   1. Copy the installed zlib folder to C:\Program Files (x86) so that OpenEXR finds zlib automatically
 1. Download and compile [openexr](https://github.com/AcademySoftwareFoundation/openexr)
-  1. Uncheck BUILD_SHARED
+   1. Uncheck BUILD_SHARED
 1. Edit paths at the top of ``compile.m`` and run within MATLAB
 
 

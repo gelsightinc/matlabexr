@@ -28,21 +28,20 @@ Usage
 -----
 
 Read image
-``
-im = exrread(filename);
-``
+    im = exrread(filename);
+
 
 Read image and alpha channel
->> [im,mask] = exrread(filename);
+    [im,mask] = exrread(filename);
 
 Image can be 1 or 3 channels of floating-point data
 Mask will be 1.0 if there is no alpha channel in the file
 
 Write image
->> exrwrite(im,filename)
+    exrwrite(im,filename)
 
 Write image with mask in alpha channel
->> exrwrite(im,mask,filename)
+    exrwrite(im,mask,filename)
 
 Image can be 1 or 3 channels
 Mask must be 1 channel the same size as the image

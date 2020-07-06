@@ -1,7 +1,7 @@
 function compile()
 
     %% UPDATE THESE PATHS
-    zlibpath = 'OpenEXR\openexr-2.5.2\zlib\lib';
+    zlibpath = 'zlib\lib';
     exrpath  = 'openexrstatic\';
 
     checkpaths(zlibpath, exrpath);

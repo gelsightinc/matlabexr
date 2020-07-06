@@ -28,7 +28,9 @@ Usage
 -----
 
 Read image
->> im = exrread(filename);
+``
+im = exrread(filename);
+``
 
 Read image and alpha channel
 >> [im,mask] = exrread(filename);
